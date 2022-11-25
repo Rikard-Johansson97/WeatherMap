@@ -28,6 +28,7 @@ const getTimeFromTimeZone = (timezone) => {
     let minutes = time.getMinutes();
     if (hours < 10) hours = "0" + hours;
     if (minutes < 10) minutes = "0" + minutes;
+    listWrapper.classList.add(`sky-gradient-${hours}`);
     cardContainer.classList.add(`sky-gradient-${hours}`);
     displayTime.innerHTML = `${hours}:${minutes}`;
 };
@@ -44,6 +45,7 @@ const getWeather = async (cityName) => {
     // displayar väder iconen
     displayWeatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     // displays info
+    listWrapper.className = "list-container";
     cardContainer.className = "card-container";
     displayInfo.innerHTML = data.weather[0].description;
     // kollar värmen

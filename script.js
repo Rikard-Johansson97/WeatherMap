@@ -67,7 +67,7 @@ const getCityList = async (search) => {
         .then((json) => {
             listWrapper.innerHTML = "";
             for (let i = 0; i < json.length; i++) {
-                if (results.length > 5) break;
+                if (results.length > 10) break;
                 if (json[i].name.toLowerCase().indexOf(search) !== -1)
                     results.push(json[i].name);
             }
